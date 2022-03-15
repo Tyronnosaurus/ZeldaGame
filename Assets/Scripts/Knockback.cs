@@ -6,7 +6,7 @@ public class Knockback : MonoBehaviour
 {
     public float thrust;
 	public float knockTime;
-
+	public int damage;
 
 	private void OnTriggerEnter2D(Collider2D other)
 	{
@@ -20,7 +20,7 @@ public class Knockback : MonoBehaviour
 		else if (other.gameObject.CompareTag("enemy"))
 		{
 			Vector3 playerPos = GetComponentInParent<Transform>().position;
-			other.GetComponent<Enemy>().Knock(playerPos, thrust, knockTime ); // Execute the enemy's own knockback code
+			other.GetComponent<Enemy>().Knock(playerPos, thrust, knockTime, damage ); // Execute the enemy's own knockback code
 		}
 
 		// For hitting the player (used by enemies)

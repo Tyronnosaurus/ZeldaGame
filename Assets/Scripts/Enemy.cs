@@ -14,17 +14,30 @@ public enum EnemyState
 public class Enemy : MonoBehaviour
 {
     public EnemyState currentState;
-    public int health;
+	public FloatValue maxHealth;	// Scriptable object
+    public int health = 1;
     public string enemyName;
     public int baseAttack;
     public float moveSpeed;
 	private Rigidbody2D myRigidBody;
 
 
-
-	public void Knock(Vector3 attackerPosition, float thrust, float knockTime)
+	public virtual void Start()
 	{
-		StartCoroutine(KnockCo(attackerPosition, thrust, knockTime));
+		health = (int)maxHealth.InitialValue;
+	}
+
+	public void Knock(Vector3 attackerPosition, float thrust, float knockTime, int damage)
+	{
+		TakeDamage(damage); 
+		if (this.gameObject.activeInHierarchy) StartCoroutine(KnockCo(attackerPosition, thrust, knockTime));
+	}
+
+
+	private void TakeDamage(int damage)
+	{
+		health -= damage;
+		if (health <= 0) this.gameObject.SetActive(false);
 	}
 
 

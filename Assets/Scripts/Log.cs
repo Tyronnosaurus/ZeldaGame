@@ -10,9 +10,12 @@ public class Log : Enemy
     public Transform homePosition;
     private Animator anim;
 
+
+
     // Start is called before the first frame update
-    void Start()
+    public override void Start()
     {
+        base.Start();
         currentState = EnemyState.idle;
         target = GameObject.FindWithTag("Player").transform;    //
         anim = GetComponent<Animator>();
