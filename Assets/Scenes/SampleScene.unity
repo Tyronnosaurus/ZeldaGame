@@ -270,6 +270,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 10
   knockTime: 0.1
+  damage: 1
 --- !u!1 &429225733
 GameObject:
   m_ObjectHideFlags: 0
@@ -346,6 +347,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 10
   knockTime: 0.1
+  damage: 1
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -8880,6 +8882,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 10
   knockTime: 0.1
+  damage: 1
 --- !u!4 &720943958 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7305131679534854464, guid: 40b5853b16b72474a9a523bbb556e08a, type: 3}
@@ -16293,6 +16296,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 10
   knockTime: 0.1
+  damage: 1
 --- !u!1 &964912881
 GameObject:
   m_ObjectHideFlags: 0
@@ -20907,7 +20911,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
-  health: 2
+  maxHealth: {fileID: 11400000, guid: fd9bffbe8a216d147a79231496b45767, type: 2}
+  health: 1
   enemyName: Larry the Log
   baseAttack: 1
   moveSpeed: 1.5
@@ -20955,6 +20960,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 7
   knockTime: 0.3
+  damage: 0
 --- !u!1 &1647373157 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2316275911801586879, guid: 9c6bfa11b6c23e945a5870e1f0737822, type: 3}
@@ -21068,6 +21074,7 @@ RectTransform:
   m_Children:
   - {fileID: 1252260604}
   - {fileID: 1148576034}
+  - {fileID: 1925229526}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -21198,6 +21205,110 @@ Transform:
   m_Father: {fileID: 1393744779}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1925229525
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1925229526}
+  - component: {fileID: 1925229528}
+  - component: {fileID: 1925229527}
+  - component: {fileID: 1925229529}
+  m_Layer: 5
+  m_Name: HealthHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1925229526
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925229525}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1729902267}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -259.51456, y: 123.80557}
+  m_SizeDelta: {x: 250.7709, y: 169.3889}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1925229527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925229525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -3855957774892257989, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1925229528
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925229525}
+  m_CullTransparentMesh: 1
+--- !u!114 &1925229529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925229525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c07f89ad45c6d6e4cb764b4c44fe0a25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  signal: {fileID: 11400000, guid: 4b67e9a4cf8826946a8d45055871c010, type: 2}
+  signalEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1925229525}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2054215189
 GameObject:
   m_ObjectHideFlags: 0

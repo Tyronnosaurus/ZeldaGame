@@ -14,7 +14,7 @@ public enum EnemyState
 public class Enemy : MonoBehaviour
 {
     public EnemyState currentState;
-	public FloatValue maxHealth;	// Scriptable object
+	public IntValue maxHealth;	// Scriptable object
     public int health = 1;
     public string enemyName;
     public int baseAttack;
@@ -24,7 +24,7 @@ public class Enemy : MonoBehaviour
 
 	public virtual void Start()
 	{
-		health = (int)maxHealth.InitialValue;
+		health = maxHealth.InitialValue;
 	}
 
 	public void Knock(Vector3 attackerPosition, float thrust, float knockTime, int damage)
