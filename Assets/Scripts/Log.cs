@@ -57,11 +57,19 @@ public class Log : Enemy
 
     // Compute which direction is a vector pointing to (by dividing the 2D into 4 quadrants with two diagonals)
     private void changeAnimationOrientation(Vector2 dir)
-	{                                                                     //                \ U /
-		if      (dir.x >=  Mathf.Abs(dir.y))  animSetFloatsXY( 1 , 0);    // RIGHT           \|/
-		else if (dir.x <= -Mathf.Abs(dir.y))  animSetFloatsXY(-1 , 0);    // LEFT         L --+-- R
-		else if (dir.y >=  Mathf.Abs(dir.x))  animSetFloatsXY( 0 , 1);    // UP              /|\
-		else if (dir.y <=  Mathf.Abs(dir.x))  animSetFloatsXY( 0 ,-1);    // DOWN           / D \
+    {
+        /*   \     /      - We divide the 2D plane in 4 parts (cones) separated by diagonals.  
+              \ U /       - These areas can be defined by functions. For example, y>|x| is the UP cone. Tip: you can plot the function in Wolphram Alpha.
+               \|/        - This is a very efficient approach (only uses <, > and Abs()).
+            L---+---R     - Many videogame maps have the player entering from the bottom or the left, meaning enemies will have
+               /|\          to look in those directions. For efficiency, these directions are checked first.
+              / D \     
+             /     \        */
+
+        if      (dir.y <=  Mathf.Abs(dir.x))   animSetFloatsXY( 0 ,-1);    // DOWN    
+        else if (dir.x <= -Mathf.Abs(dir.y))   animSetFloatsXY(-1 , 0);    // LEFT 
+        else if (dir.y >=  Mathf.Abs(dir.x))   animSetFloatsXY( 0 , 1);    // UP  
+        else                                   animSetFloatsXY( 1 , 0);    // RIGHT              
     }
 
     // Update animator variables so that blend tree uses the correct animation

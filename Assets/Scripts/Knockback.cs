@@ -20,14 +20,17 @@ public class Knockback : MonoBehaviour
 		else if (other.gameObject.CompareTag("enemy"))
 		{
 			Vector3 playerPos = GetComponentInParent<Transform>().position;
-			other.GetComponent<Enemy>().Knock(playerPos, thrust, knockTime, damage ); // Execute the enemy's own knockback code
+			other.GetComponent<Enemy>().Knock(playerPos, thrust, knockTime, damage); // Execute the enemy's own knockback code
 		}
 
 		// For hitting the player (used by enemies)
 		else if (other.gameObject.CompareTag("Player"))
 		{
-			Vector3 attackerPos = GetComponentInParent<Transform>().position;
-			other.GetComponent<PlayerMovement>().Knock(attackerPos, thrust, knockTime); // Execute the player's own knockback code
+			if (other.GetComponent<PlayerMovement>().currentState != PlayerState.stagger)	// Player is invulnerable while staggered
+			{
+				Vector3 attackerPos = GetComponentInParent<Transform>().position;
+				other.GetComponent<PlayerMovement>().Knock(attackerPos, thrust, knockTime, damage); // Execute the player's own knockback code
+			}
 		}
 	}
 

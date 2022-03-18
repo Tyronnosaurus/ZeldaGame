@@ -20,6 +20,8 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D myRigidBody2D;
     private Vector2 change; // Could be Vector2 but we use Vector3 to 
     private Animator animator;
+    public IntValue currentHealth;
+    public Signal playerHealthSignal;
 
     // Start is called before the first frame update
     void Start()
@@ -32,8 +34,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-
-	void FixedUpdate()
+    void FixedUpdate()
     {
         // Get movement input
         change = Vector2.zero;
@@ -89,10 +90,16 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-    public void Knock(Vector3 attackerPosition, float thrust, float knockTime)
+    public void Knock(Vector3 attackerPosition, float thrust, float knockTime, int damage)
 	{
-        StartCoroutine(KnockCo(attackerPosition, thrust, knockTime));
+        currentHealth.InitialValue -= damage;
+        if (currentHealth.InitialValue > 0)
+		{
+            playerHealthSignal.Raise();
+            StartCoroutine(KnockCo(attackerPosition, thrust, knockTime));
+        }
 	}
+
 
 
     private IEnumerator KnockCo(Vector3 attackerPosition, float thrust, float knockTime)
