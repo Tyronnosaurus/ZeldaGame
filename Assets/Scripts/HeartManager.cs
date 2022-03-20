@@ -39,10 +39,11 @@ public class HeartManager : MonoBehaviour
 
     public void UpdateHearts()
 	{
-        for (int i=0; i < heartContainers.InitialValue; i++)
+        // Each heart counts as 2 health units. Here we decide which hearts are full, half or empty
+        for (int i=0; i < hearts.Length; i++)
 		{
             if      (playerCurrentHealth.value >= 2*(i+1))   hearts[i].sprite = fullHeart;     // Full heart
-            else if (playerCurrentHealth.value <= 2*i)        hearts[i].sprite = emptyHeart;    // Empty heart
+            else if (playerCurrentHealth.value <= 2*i)       hearts[i].sprite = emptyHeart;    // Empty heart
 			else                                             hearts[i].sprite = halfFullHeart; // Half heart
         }
 	}

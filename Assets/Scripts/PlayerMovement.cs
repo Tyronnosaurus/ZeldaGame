@@ -91,15 +91,11 @@ public class PlayerMovement : MonoBehaviour
 
 
     public void Knock(Vector3 attackerPosition, float thrust, float knockTime, int damage)
-	{
-        
+	{        
         currentHealth.value -= damage;
-        Debug.Log(damage +" "+ currentHealth.value);
         playerHealthSignal.Raise();
-        if (currentHealth.InitialValue > 0)
-		{
-            StartCoroutine(KnockCo(attackerPosition, thrust, knockTime));
-        }
+
+        if (currentHealth.InitialValue > 0)   StartCoroutine(KnockCo(attackerPosition, thrust, knockTime));
 	}
 
 
