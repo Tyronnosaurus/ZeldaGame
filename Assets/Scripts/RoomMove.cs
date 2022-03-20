@@ -7,37 +7,33 @@ using UnityEngine.Tilemaps;
 
 public class RoomMove : MonoBehaviour
 {
-    public Vector2 playerChange;            // Small push to the player to move inside the room
-    
-    private CameraMovement cam;
-
-    private Bounds mapBounds;
-
+    public Vector2 playerChange;    // Direction of small push to the player to move inside the room
     public GameObject targetRoom;
-    public Tilemap targetGround;
-
     public GameObject text;
     public Text placeText;
+
+    private CameraMovement cam;
+    private Bounds mapBounds;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        cam = Camera.main.GetComponent<CameraMovement>();   // Get camera
+        // Get camera
+        cam = Camera.main.GetComponent<CameraMovement>();
 
-        // Tilemap bounds do not resize down when erasing tiles. We need to use the editor's tool "Compress Tilemap Bounds" or execute CompressBounds()
-        targetRoom.GetComponentInChildren<Tilemap>().CompressBounds();
+        // Get tilemap bounds of target room
         mapBounds = targetRoom.GetComponentInChildren<TilemapRenderer>().bounds;
     }
 
 
 
-
+    // Player has touched the Room Transfer collider
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !other.isTrigger) // Player has multiple BoxCollider2D but only check the 'trigger' one
         {
-            // Give the player a little push 
+            // Give the player a little push (to prevent triggering the opposite RoomTransfer)
             other.transform.position += (Vector3)playerChange;
 
             // Reconfigure camera limits
@@ -49,6 +45,7 @@ public class RoomMove : MonoBehaviour
     }
 
 
+    // Shows an UI overlay with the name of the room for a few seconds
     private IEnumerator placeNameCo()
 	{
         text.SetActive(true);
