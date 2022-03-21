@@ -22,6 +22,8 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
     public IntValue currentHealth;
     public Signal playerHealthSignal;
+    public Vector2Value startingPosition;
+
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +33,8 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
 
         animator.SetFloat("movY", -1);  // Tell the animator we're looking down. Otherwise, if we attack before moving, all 4 hitboxes activates
+
+        transform.position = startingPosition.value;
     }
 
 
