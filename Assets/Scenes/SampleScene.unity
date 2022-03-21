@@ -9763,7 +9763,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.79, y: -8.55, z: -10}
+  m_LocalPosition: {x: 23.47, y: -11.78, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -44255,9 +44255,25 @@ PrefabInstance:
       value: SceneTransition
       objectReference: {fileID: 0}
     - target: {fileID: 7443529581448062158, guid: 64dc4b6eb417b024280c08838eb30090, type: 3}
+      propertyPath: test
+      value: 
+      objectReference: {fileID: 7400000, guid: 26d0fb1eeb247e845be4bac923618a33, type: 2}
+    - target: {fileID: 7443529581448062158, guid: 64dc4b6eb417b024280c08838eb30090, type: 3}
+      propertyPath: fadeWait
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7443529581448062158, guid: 64dc4b6eb417b024280c08838eb30090, type: 3}
       propertyPath: SceneToLoad
       value: HouseInterior
       objectReference: {fileID: 0}
+    - target: {fileID: 7443529581448062158, guid: 64dc4b6eb417b024280c08838eb30090, type: 3}
+      propertyPath: fadeInPanel
+      value: 
+      objectReference: {fileID: 6186886418639079483, guid: df6a41ca6a8b9514da87ffbea6819369, type: 3}
+    - target: {fileID: 7443529581448062158, guid: 64dc4b6eb417b024280c08838eb30090, type: 3}
+      propertyPath: fadeOutPanel
+      value: 
+      objectReference: {fileID: 1198743930069944203, guid: 08bce3b72a1cb5a458c30961858ad481, type: 3}
     - target: {fileID: 7443529581448062158, guid: 64dc4b6eb417b024280c08838eb30090, type: 3}
       propertyPath: playerStorage
       value: 

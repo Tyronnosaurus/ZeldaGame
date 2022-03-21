@@ -6677,10 +6677,15 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7442938233681316876, guid: 64dc4b6eb417b024280c08838eb30090, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 7442938233681316876, guid: 64dc4b6eb417b024280c08838eb30090, type: 3}
       propertyPath: m_Name
       value: SceneTransition
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7443529581448062158, guid: 64dc4b6eb417b024280c08838eb30090, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 64dc4b6eb417b024280c08838eb30090, type: 3}
 --- !u!1 &8884366644013578639 stripped
 GameObject:
@@ -6702,3 +6707,6 @@ MonoBehaviour:
   SceneToLoad: SampleScene
   playerPosition: {x: 4.5, y: -7}
   playerStorage: {fileID: 11400000, guid: a2539eab1e1219c4b845b759003023d9, type: 2}
+  fadeInPanel: {fileID: 6186886418639079483, guid: df6a41ca6a8b9514da87ffbea6819369, type: 3}
+  fadeOutPanel: {fileID: 1198743930069944203, guid: 08bce3b72a1cb5a458c30961858ad481, type: 3}
+  fadeWait: 0.3
