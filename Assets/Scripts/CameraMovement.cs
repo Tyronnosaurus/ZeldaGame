@@ -39,8 +39,12 @@ public class CameraMovement : MonoBehaviour
     // Centers camera on player instantaneously, but making sure not to show outside of the map if player is near the edge
 	private void SetOnPlayer()
 	{
-        float x = Mathf.Clamp(target.position.x, camBounds.min.x, camBounds.max.x);
-        float y = Mathf.Clamp(target.position.y, camBounds.min.y, camBounds.max.y);
+        // Camera's Start() runs before Player gets moved to its start position.
+        // Therefore we fetch the configured start position (regardless of the player being there or not), rather than target.position.
+        Vector2 targetCorrected = target.GetComponent<PlayerMovement>().startingPosition.value;
+
+        float x = Mathf.Clamp(targetCorrected.x, camBounds.min.x, camBounds.max.x);
+        float y = Mathf.Clamp(targetCorrected.y, camBounds.min.y, camBounds.max.y);
         transform.position = new Vector3(x, y, transform.position.z);
     }
 
