@@ -16,8 +16,8 @@ public class Knockback : MonoBehaviour
 			other.GetComponent<Pot>().Smash();
 		}
 
-		// For hitting enemies
-		else if (other.gameObject.CompareTag("enemy"))
+		// For hitting enemies. Note that enemies can't hit each other
+		else if (other.gameObject.CompareTag("enemy")  &&  !this.gameObject.CompareTag("enemy"))
 		{
 			Vector3 playerPos = GetComponentInParent<Transform>().position;
 			other.GetComponent<Enemy>().Knock(playerPos, thrust, knockTime, damage); // Execute the enemy's own knockback code
