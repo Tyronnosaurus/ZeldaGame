@@ -10,7 +10,7 @@ public class ContextClue : MonoBehaviour
 	public bool contextActive = false;
 
     public void Enable()
-    { contextClue.SetActive(true); Debug.Log("Enabled");	}
+    { contextClue.SetActive(true); }
 
     public void Disable()
     { contextClue.SetActive(false); }

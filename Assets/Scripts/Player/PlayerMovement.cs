@@ -8,8 +8,8 @@ public enum PlayerState
     idle,
     walk,
     attack,
-    interact,
-    stagger
+    stagger,
+    interact
 }
 
 
@@ -23,6 +23,8 @@ public class PlayerMovement : MonoBehaviour
     public IntValue currentHealth;
     public Signal playerHealthSignal;
     public Vector2Value startingPosition;
+    public Inventory playerInventory;
+    public SpriteRenderer receivedItemSprite;
 
 
     // Start is called before the first frame update
@@ -32,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
         myRigidBody2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
-        animator.SetFloat("movY", -1);  // Tell the animator we're looking down. Otherwise, if we attack before moving, all 4 hitboxes activates
+        animator.SetFloat("movY", -1);  // Tell the animator we're looking down. Otherwise, if we attack before moving, all 4 hitboxes activate
 
         transform.position = startingPosition.value;
     }
@@ -56,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         // The "attack" input is defined in Edit>Preferences>Input Manager
-        if (Input.GetButtonDown("attack")  &&  (currentState != PlayerState.attack)  &&  (currentState != PlayerState.stagger))
+        if (Input.GetButtonDown("attack")  &&  ((currentState == PlayerState.idle)  ||  (currentState == PlayerState.walk)))
         {
             StartCoroutine(AttackCo());
         }
@@ -88,9 +90,33 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("attacking", true);    // Trigger the player's animation transition
         yield return null;                      // We only need 'attacking' to be true for 1 cycle
         animator.SetBool("attacking", false);
-
         yield return new WaitForSeconds(.33f);  // After some time, update player's internal state machine
-        currentState = PlayerState.walk;
+        
+        if(currentState != PlayerState.interact) // In case user pressed Space to interact with something
+            currentState = PlayerState.walk;
+    }
+
+
+    /// <summary> Raise obtained item over player's head  </summary>
+    public void RaiseItem()
+    {
+        //if (playerInventory.currentItem != null)    // If currently not have item to show
+        if (true)
+        {
+            if (currentState != PlayerState.interact)   // First signal trigger -> Start 'ReceiveItem'
+            {
+                currentState = PlayerState.interact;
+                animator.SetBool("receive item", true); // Change player animation to the 'ReceiveItem' pose
+                receivedItemSprite.sprite = playerInventory.currentItem.itemSprite;
+            }
+            else // Second signal trigger -> Go back to normal gameplay
+            {
+                currentState = PlayerState.idle;
+                animator.SetBool("receive item", false); // Exit 'ReceiveItem' animation
+                receivedItemSprite.sprite = null;
+                playerInventory.currentItem = null;
+            }
+        }
     }
 
 
