@@ -28,8 +28,8 @@ public class CameraMovement : MonoBehaviour
     }
 
 
-    // LateUpdate is called once per frame, at the end
-    void LateUpdate()
+
+    void FixedUpdate()
     {
         FollowPlayerSmooth();
     }

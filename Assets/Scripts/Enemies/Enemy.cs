@@ -21,22 +21,21 @@ public class Enemy : MonoBehaviour
     public float moveSpeed;
 	private Rigidbody2D myRigidBody;
 	public float chaseRadius;
-	private Animator anim;
+	protected Animator anim;
 	public Transform target;
 	public float attackRadius;
-	public Transform homePosition;
 
 
-	public virtual void Start()
+	protected void Start()
 	{
 		health = maxHealth.InitialValue;
-		currentState = EnemyState.idle;
 		target = GameObject.FindWithTag("Player").transform;
 		anim = GetComponent<Animator>();
+		currentState = EnemyState.idle;
 	}
 
 
-	void FixedUpdate()
+	protected void Update()
 	{
 		CheckDistance();
 	}
@@ -79,7 +78,7 @@ public class Enemy : MonoBehaviour
 
 
 
-	protected void CheckDistance()
+	protected virtual void CheckDistance()
 	{
 		float distance = Vector3.Distance(target.position, transform.position);
 
@@ -106,7 +105,7 @@ public class Enemy : MonoBehaviour
 
 	}
 
-	private void ChangeState(EnemyState newState)
+	protected void ChangeState(EnemyState newState)
 	{
 		if (currentState != newState) currentState = newState;
 	}
@@ -115,7 +114,7 @@ public class Enemy : MonoBehaviour
 
 
 	// Compute which direction is a vector pointing to (by dividing the 2D into 4 quadrants with two diagonals)
-	private void changeAnimationOrientation(Vector2 dir)
+	protected void changeAnimationOrientation(Vector2 dir)
 	{
 		/*   \     /      - We divide the 2D plane in 4 parts (cones) separated by diagonals.  
               \ U /       - These areas can be defined by functions. For example, y>|x| is the UP cone. Tip: you can plot the function in Wolphram Alpha.
@@ -125,10 +124,10 @@ public class Enemy : MonoBehaviour
               / D \     
              /     \        */
 
-		if (dir.y <= Mathf.Abs(dir.x)) animSetFloatsXY(0, -1);    // DOWN    
-		else if (dir.x <= -Mathf.Abs(dir.y)) animSetFloatsXY(-1, 0);    // LEFT 
-		else if (dir.y >= Mathf.Abs(dir.x)) animSetFloatsXY(0, 1);    // UP  
-		else animSetFloatsXY(1, 0);    // RIGHT              
+		if      (dir.y <= -Mathf.Abs(dir.x)) animSetFloatsXY(0, -1);  // DOWN    
+		else if (dir.x <= -Mathf.Abs(dir.y)) animSetFloatsXY(-1, 0);  // LEFT
+		else if (dir.y >=  Mathf.Abs(dir.x)) animSetFloatsXY(0, 1);   // UP  
+		else                                 animSetFloatsXY(1, 0);   // RIGHT              
 	}
 
 	// Update animator variables so that blend tree uses the correct animation
