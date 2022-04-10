@@ -59,17 +59,14 @@ public class PatrolLog : Log
 		if (distanceToTarget < attackRadius)
 		{
 			// Do nothing
-			Debug.Log("close");
 		}	
 		else if (distanceToTarget <= chaseRadius)  // If player inside chase radius (but outside attack radius) -> Chase player
 		{
-			Debug.Log("chase");
 			transform.position = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);  // Chase player
 			changeAnimationOrientation(target.position - transform.position);       // Used to choose which walking animation to use
 		}
 		else if (distanceToTarget > chaseRadius)  // Outside chase radius -> Keep patrol
 		{
-			Debug.Log("patrol");
 			transform.position = Vector3.MoveTowards(transform.position, patrolPointsFixed[pIndex], moveSpeed * Time.deltaTime);  // Move to goal patrol point
 			changeAnimationOrientation(patrolPointsFixed[pIndex] - transform.position);       // Used to choose which walking animation to use
 

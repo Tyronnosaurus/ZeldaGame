@@ -36,6 +36,8 @@ public class PlayerMovement : MonoBehaviour
 
         animator.SetFloat("movY", -1);  // Tell the animator we're looking down. Otherwise, if we attack before moving, all 4 hitboxes activate
 
+        // Initial position (spawn) in the scene.
+        // This value is taken from a scriptable object and can be changed by Scene Transitions.
         transform.position = startingPosition.value;
     }
 

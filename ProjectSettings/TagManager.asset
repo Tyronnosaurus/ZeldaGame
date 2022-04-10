@@ -40,6 +40,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Ground
+    uniqueID: 2993999597
+    locked: 0
+  - name: AboveGround
+    uniqueID: 3259961377
+    locked: 0
+  - name: AbovePlayer
+    uniqueID: 3130060429
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
