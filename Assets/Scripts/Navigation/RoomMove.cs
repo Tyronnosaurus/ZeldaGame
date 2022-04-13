@@ -9,8 +9,9 @@ public class RoomMove : MonoBehaviour
 {
     public Vector2 playerChange;    // Direction of small push to the player to move inside the room
     public GameObject targetRoom;
+
     public GameObject text;
-    public Text placeText;
+    private Text placeText;
 
     private CameraMovement cam;
     private Bounds mapBounds;
@@ -24,6 +25,9 @@ public class RoomMove : MonoBehaviour
 
         // Get tilemap bounds of target room
         mapBounds = targetRoom.GetComponentInChildren<TilemapRenderer>().bounds;
+
+        //
+        placeText = text.GetComponent<Text>();
     }
 
 
