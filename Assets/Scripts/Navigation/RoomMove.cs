@@ -41,7 +41,7 @@ public class RoomMove : MonoBehaviour
             other.transform.position += (Vector3)playerChange;
 
             // Reconfigure camera limits
-            cam.UpdateBounds(mapBounds);
+            cam.UpdateCamBounds(mapBounds);
 
             // Show name of new room
             if (targetRoom.GetComponent<RoomData>().needsNameShown)   StartCoroutine(placeNameCo());
