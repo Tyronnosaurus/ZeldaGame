@@ -3871,14 +3871,10 @@ PrefabInstance:
     - target: {fileID: 616982330389607490, guid: e8ab0207c3b820e40aad106388a05cb2, type: 3}
       propertyPath: m_Icon
       value: 
-      objectReference: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+      objectReference: {fileID: 0}
     - target: {fileID: 2664546976457762259, guid: e8ab0207c3b820e40aad106388a05cb2, type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3274028949718324052, guid: e8ab0207c3b820e40aad106388a05cb2, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 4609975831682607161, guid: e8ab0207c3b820e40aad106388a05cb2, type: 3}
       propertyPath: m_SortingLayer
