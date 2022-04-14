@@ -16,13 +16,12 @@ public class Enemy : MonoBehaviour
     public EnemyState currentState;
 	public IntValue maxHealth;	// Scriptable object
     public int health = 1;
-    public string enemyName;
     public int baseAttack;
     public float moveSpeed;
 	private Rigidbody2D myRigidBody;
 	public float chaseRadius;
 	protected Animator anim;
-	public Transform target;
+	protected Transform target;
 	public float attackRadius;
 
 

@@ -60,15 +60,8 @@ public class CameraMovement : MonoBehaviour
         {
             targetPosition.x = Mathf.Clamp(targetPosition.x, camBounds.min.x, camBounds.max.x);
             targetPosition.y = Mathf.Clamp(targetPosition.y, camBounds.min.y, camBounds.max.y);
-
             transform.position = Vector3.Lerp(transform.position, targetPosition, smoothing);
-
-            // Rather than having the camera approach the player assimptotically forever, force it onto the player once it gets close enough
-            //if (Vector3.Distance(transform.position, targetPosition) < 0.01) transform.position = targetPosition;
         }
-
-        Debug.Log(camBounds);
-
     }
 
 

@@ -75,7 +75,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 137683543
-  m_SortingLayer: 2
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: -5034061168752090764, guid: b0016dfd05d2d5746ae0bead2b5bb92b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -168,14 +168,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 0
   maxHealth: {fileID: 11400000, guid: fd9bffbe8a216d147a79231496b45767, type: 2}
-  health: 1
+  health: 2
   enemyName: Larry the Log
   baseAttack: 1
   moveSpeed: 1.5
   chaseRadius: 5
-  target: {fileID: 0}
   attackRadius: 0.5
-  homePosition: {fileID: 0}
+  deathEffect: {fileID: 5346792252511493460, guid: f9ccd2626e7bbc04eb928d16cc7c59c1, type: 3}
 --- !u!61 &2080678141602864921
 BoxCollider2D:
   m_ObjectHideFlags: 0
