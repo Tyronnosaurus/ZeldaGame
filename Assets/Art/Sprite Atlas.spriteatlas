@@ -1635,9 +1635,7 @@ SpriteAtlas:
   - {fileID: 8277753512624892258, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
   - {fileID: -6156538738564848463, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
   - {fileID: -3163061646288262330, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
-  - {fileID: 6465271316976419069, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
   - {fileID: -8006292867793706052, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
-  - {fileID: -6188367394728635080, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
   - {fileID: 3722172780092429670, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
   - {fileID: -8888418204731768549, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
   - {fileID: 5955781087917997448, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
@@ -1661,7 +1659,6 @@ SpriteAtlas:
   - {fileID: -6469549280988569358, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
   - {fileID: 5109969820934194805, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
   - {fileID: 4810265859514842165, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
-  - {fileID: -5262628193677242302, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
   - {fileID: -1955489751837219279, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
   - {fileID: -3980494300707121562, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
   - {fileID: -76596165655313214, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
@@ -1765,6 +1762,10 @@ SpriteAtlas:
   - {fileID: 538826285080647454, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
   - {fileID: 1107736971085435061, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
   - {fileID: -377563455374678323, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
+  - {fileID: -5262628193677242302, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
+  - {fileID: 6465271316976419069, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
+  - {fileID: -6188367394728635080, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
+  - {fileID: 4695374288273231278, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
   - {fileID: 21300000, guid: 0027ee2ff37fe0f43b8f59eaf579b7ae, type: 3}
   m_PackedSpriteNamesToIndex:
   - Key
@@ -3353,9 +3354,7 @@ SpriteAtlas:
   - objects_58
   - objects_88
   - objects_89
-  - objects_53
   - objects_84
-  - objects_52
   - objects_68
   - objects_85
   - objects_99
@@ -3379,7 +3378,6 @@ SpriteAtlas:
   - objects_65
   - objects_82
   - objects_94
-  - objects_54
   - objects_62
   - objects_83
   - objects_93
@@ -3483,6 +3481,10 @@ SpriteAtlas:
   - objects_119
   - objects_109
   - objects_108
+  - objects_52c
+  - objects_52b
+  - objects_52a
+  - objects_52d
   - font
   m_RenderDataMap: {}
   m_Tag: Sprite Atlas

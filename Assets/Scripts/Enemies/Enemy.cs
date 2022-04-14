@@ -23,6 +23,7 @@ public class Enemy : MonoBehaviour
 	protected Animator anim;
 	protected Transform target;
 	public float attackRadius;
+	public GameObject deathEffect;
 
 
 	protected void Start()
@@ -42,15 +43,22 @@ public class Enemy : MonoBehaviour
 
 	public void Knock(Vector3 attackerPosition, float thrust, float knockTime, int damage)
 	{
-		TakeDamage(damage); 
-		if (this.gameObject.activeInHierarchy) StartCoroutine(KnockCo(attackerPosition, thrust, knockTime));
+		if (currentState != EnemyState.stagger)	// Make enemy invulnerable while being knocked back
+		{
+			TakeDamage(damage);
+			if (this.gameObject.activeInHierarchy) StartCoroutine(KnockCo(attackerPosition, thrust, knockTime));
+		}
 	}
 
 
 	private void TakeDamage(int damage)
 	{
 		health -= damage;
-		if (health <= 0) this.gameObject.SetActive(false);
+		if (health <= 0)
+		{
+			this.gameObject.SetActive(false);
+			Die();
+		}
 	}
 
 
@@ -136,4 +144,14 @@ public class Enemy : MonoBehaviour
 		anim.SetFloat("movY", y);
 	}
 
+
+
+	private void Die()
+	{
+		if (deathEffect != null)
+		{
+			GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
+			Destroy(effect, 1f);
+		}
+	}
 }

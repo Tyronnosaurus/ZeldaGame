@@ -3675,6 +3675,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2715527513976243866, guid: 838f5731c93e87f409d9cb61ec89de93, type: 3}
+      propertyPath: deathEffect
+      value: 
+      objectReference: {fileID: 5346792252511493460, guid: f9ccd2626e7bbc04eb928d16cc7c59c1, type: 3}
+    - target: {fileID: 2715527513976243866, guid: 838f5731c93e87f409d9cb61ec89de93, type: 3}
       propertyPath: patrolPattern
       value: 1
       objectReference: {fileID: 0}
