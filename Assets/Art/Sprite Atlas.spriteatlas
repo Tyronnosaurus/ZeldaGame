@@ -1665,10 +1665,8 @@ SpriteAtlas:
   - {fileID: -9193188169025097682, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
   - {fileID: 1336440320741484319, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
   - {fileID: -8914528431609462405, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
-  - {fileID: 9171275872940762989, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
   - {fileID: -93750458980389090, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
   - {fileID: -7946122169745577622, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
-  - {fileID: -7079720951457237320, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
   - {fileID: -8894351329827163213, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
   - {fileID: 2654447934904345190, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
   - {fileID: -3276687688264177478, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
@@ -1762,6 +1760,9 @@ SpriteAtlas:
   - {fileID: 538826285080647454, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
   - {fileID: 1107736971085435061, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
   - {fileID: -377563455374678323, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
+  - {fileID: -7079720951457237320, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
+  - {fileID: 9171275872940762989, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
+  - {fileID: 5933575259166601856, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
   - {fileID: -5262628193677242302, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
   - {fileID: 6465271316976419069, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
   - {fileID: -6188367394728635080, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
@@ -3384,10 +3385,8 @@ SpriteAtlas:
   - objects_63
   - objects_8
   - objects_92
-  - objects_60
   - objects_9
   - objects_91
-  - objects_61
   - objects_90
   - objects_4
   - objects_5
@@ -3481,6 +3480,9 @@ SpriteAtlas:
   - objects_119
   - objects_109
   - objects_108
+  - objects_59d
+  - objects_59b
+  - objects_59c
   - objects_52c
   - objects_52b
   - objects_52a
