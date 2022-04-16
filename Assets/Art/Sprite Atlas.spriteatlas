@@ -1631,7 +1631,6 @@ SpriteAtlas:
   - {fileID: -8086995983514025172, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
   - {fileID: 4568664149699701401, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
   - {fileID: -2466020301452136916, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
-  - {fileID: -6998631668141411158, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
   - {fileID: 8277753512624892258, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
   - {fileID: -6156538738564848463, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
   - {fileID: -3163061646288262330, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
@@ -1689,6 +1688,7 @@ SpriteAtlas:
   - {fileID: 6047981793563322428, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
   - {fileID: -4278146406926210488, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
   - {fileID: -8964931362486711191, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
+  - {fileID: 5820556885017641329, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
   - {fileID: -8645023156390270622, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
   - {fileID: -3918494168125004522, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
   - {fileID: 3059094148099763215, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
@@ -1763,6 +1763,7 @@ SpriteAtlas:
   - {fileID: -7079720951457237320, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
   - {fileID: 9171275872940762989, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
   - {fileID: 5933575259166601856, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
+  - {fileID: -6998631668141411158, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
   - {fileID: -5262628193677242302, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
   - {fileID: 6465271316976419069, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
   - {fileID: -6188367394728635080, guid: 672458dec8b73904ea0cd7bbf2a807c8, type: 3}
@@ -3351,7 +3352,6 @@ SpriteAtlas:
   - objects_76
   - objects_79
   - objects_78
-  - objects_59
   - objects_58
   - objects_88
   - objects_89
@@ -3409,6 +3409,7 @@ SpriteAtlas:
   - objects_128
   - objects_137
   - objects_127
+  - objects_146
   - objects_130
   - objects_126
   - objects_131
@@ -3483,6 +3484,7 @@ SpriteAtlas:
   - objects_59d
   - objects_59b
   - objects_59c
+  - objects_59a
   - objects_52c
   - objects_52b
   - objects_52a

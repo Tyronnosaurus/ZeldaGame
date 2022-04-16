@@ -14,6 +14,8 @@ public class Inventory : ScriptableObject
 	/// <summary> Number of small keys (they're not stored in inventory like normal items) </summary>
 	public int numberOfKeys;
 
+	public int coins;
+
 
 	/// <summary> Add item to inventory </summary>
 	public void AddItem(Item itemToAdd)
