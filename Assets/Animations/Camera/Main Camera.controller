@@ -61,8 +61,8 @@ AnimatorController:
   m_Name: Main Camera
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: kick_active
-    m_Type: 4
+  - m_Name: CameraShake
+    m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
@@ -111,7 +111,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: kick_active
+    m_ConditionEvent: CameraShake
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 9029269150775538081}

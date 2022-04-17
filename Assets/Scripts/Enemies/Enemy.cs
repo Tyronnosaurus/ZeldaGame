@@ -13,7 +13,10 @@ public enum EnemyState
 
 public class Enemy : MonoBehaviour
 {
+	[Header("State Machine")]
     public EnemyState currentState;
+
+	[Header("Stats")]
 	public IntValue maxHealth;	// Scriptable object
     public int health = 1;
     public int baseAttack;
@@ -23,7 +26,10 @@ public class Enemy : MonoBehaviour
 	protected Animator anim;
 	protected Transform target;
 	public float attackRadius;
+
+	[Header("Death effects")]
 	public GameObject deathEffect;
+	private float deathEffectDelay = 1f;
 
 
 	protected void Start()
@@ -151,7 +157,7 @@ public class Enemy : MonoBehaviour
 		if (deathEffect != null)
 		{
 			GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
-			Destroy(effect, 1f);
+			Destroy(effect, deathEffectDelay); //Destroy after some time to let animation finish
 		}
 	}
 }

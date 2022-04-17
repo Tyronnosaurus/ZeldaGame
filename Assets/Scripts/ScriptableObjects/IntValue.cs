@@ -7,7 +7,6 @@ public class IntValue : ScriptableObject, ISerializationCallbackReceiver
 {
 	public int InitialValue;
 
-	//[HideInInspector]
 	public int value;
 
 	// By inheriting from ISerializationCallbackReceiver and adding these 2 functions, we make sure value is reset between executions.

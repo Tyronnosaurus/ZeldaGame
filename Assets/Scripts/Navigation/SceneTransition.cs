@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneTransition : MonoBehaviour
 {
+	[Header("New scene variables")]
     public string SceneToLoad;
 	
 	/// <summary> Spawn position in the new scene </summary>
@@ -13,6 +14,7 @@ public class SceneTransition : MonoBehaviour
 	/// <summary> Scriptable object containing the player's spawn position. Can be changed whenever we go to a new scene. </summary>
 	public Vector2Value playerStorage;
 
+	[Header("Transition animation")]
 	/// <summary> Animation for when exiting a scene </summary>
 	public GameObject fadeOutPanel;
 	/// <summary> Animation for when entering a scene </summary>
