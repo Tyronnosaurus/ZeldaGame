@@ -103,16 +103,11 @@ public class CameraMovement : MonoBehaviour
 	}
 
 
+
+    /// <summary> Triggers camera shake. Called by signal listener. </summary>
     public void BeginCameraKick()
     {
-        animator.SetBool("kick_active", true);
-        StartCoroutine(StopCameraKick());   // Set kick_active false for next time we need it, but do it at least one frame later
-    }
-
-    public IEnumerator StopCameraKick()
-    {
-        yield return null;  // Wait one frame
-        animator.SetBool("kick_active", false);
+        animator.SetTrigger("CameraShake");
     }
 
 }
