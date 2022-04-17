@@ -18,11 +18,11 @@ public class PlayerMovement : MonoBehaviour
     public PlayerState currentState;
     public float speed;
     private Rigidbody2D myRigidBody2D;
-    private Vector2 change; // Could be Vector2 but we use Vector3 to 
+    private Vector2 change;
     private Animator animator;
     public IntValue currentHealth;
     public Signal playerHealthSignal;
-    public Vector2Value startingPosition;
+    public PlayerSpawnStorage playerSpawnStorage;
     public Inventory playerInventory;
     public SpriteRenderer receivedItemSprite;
     public Signal ScreenKick;
@@ -35,11 +35,15 @@ public class PlayerMovement : MonoBehaviour
         myRigidBody2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
-        animator.SetFloat("movY", -1);  // Tell the animator we're looking down. Otherwise, if we attack before moving, all 4 hitboxes activate
-
+        
         // Initial position (spawn) in the scene.
-        // This value is taken from a scriptable object and can be changed by Scene Transitions.
-        transform.position = startingPosition.value;
+        // This value is taken from a scriptable object and is changed by Scene Transitions.
+        transform.position = playerSpawnStorage.position;
+
+        // Initial orientation (spawn) in the scene.
+        // We don't actually rotate the sprite. We just tell the animator the direction so that it chooses the adequate sprite.
+        animator.SetFloat("movX", playerSpawnStorage.orientation.x);
+        animator.SetFloat("movY", playerSpawnStorage.orientation.y);
     }
 
 

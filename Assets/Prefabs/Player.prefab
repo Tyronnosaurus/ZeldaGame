@@ -374,9 +374,10 @@ MonoBehaviour:
   speed: 4
   currentHealth: {fileID: 11400000, guid: 0f85142e5c907ef469c31a15e094f0df, type: 2}
   playerHealthSignal: {fileID: 11400000, guid: 4b67e9a4cf8826946a8d45055871c010, type: 2}
-  startingPosition: {fileID: 11400000, guid: a2539eab1e1219c4b845b759003023d9, type: 2}
+  playerSpawnStorage: {fileID: 11400000, guid: a2539eab1e1219c4b845b759003023d9, type: 2}
   playerInventory: {fileID: 11400000, guid: 409e4eef5bf68f94fbf01f5822877aa5, type: 2}
   receivedItemSprite: {fileID: 4609975831682607161}
+  ScreenKick: {fileID: 11400000, guid: e0794cf46413d90488bd842673272aa7, type: 2}
 --- !u!61 &8464727547481286711
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -10,9 +10,11 @@ public class SceneTransition : MonoBehaviour
     public string SceneToLoad;
 	
 	/// <summary> Spawn position in the new scene </summary>
-	public Vector2 playerPosition;
+	public Vector2 playerSpawnPosition;
+	public Vector2 playerSpawnOrientation;
+
 	/// <summary> Scriptable object containing the player's spawn position. Can be changed whenever we go to a new scene. </summary>
-	public Vector2Value playerStorage;
+	public PlayerSpawnStorage playerSpawnStorage;
 
 	[Header("Transition animation")]
 	/// <summary> Animation for when exiting a scene </summary>
@@ -22,14 +24,14 @@ public class SceneTransition : MonoBehaviour
 
 
 
-
+	/// <summary> Triggers scene transition </summary>
 	public void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.CompareTag("Player") && !other.isTrigger)	// Player has multiple colliders. Use only the one that is trigger.
+		if (other.CompareTag("Player") && !other.isTrigger)	// Player has multiple colliders. Use only the one that isn't trigger.
 		{
-			playerStorage.value = playerPosition;   // Change on the Scriptable Object -> When Player loads on a new scene he'll appear in this position
+			playerSpawnStorage.position    = playerSpawnPosition;  // Changes on the Scriptable Object survive between scenes -> When Player loads on a new scene he'll appear in this position
+			playerSpawnStorage.orientation = playerSpawnOrientation;
 			StartCoroutine(FadeCo());
-
 		}
 	}
 

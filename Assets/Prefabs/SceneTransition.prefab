@@ -71,3 +71,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneToLoad: 
+  playerSpawnPosition: {x: 0, y: 0}
+  playerSpawnOrientation: {x: 0, y: 0}
+  playerSpawnStorage: {fileID: 11400000, guid: a2539eab1e1219c4b845b759003023d9, type: 2}
+  fadeOutPanel: {fileID: 1198743930069944203, guid: 08bce3b72a1cb5a458c30961858ad481, type: 3}
+  fadeInPanel: {fileID: 6186886418639079483, guid: df6a41ca6a8b9514da87ffbea6819369, type: 3}

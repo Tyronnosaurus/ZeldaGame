@@ -47,7 +47,7 @@ public class CameraMovement : MonoBehaviour
 	{
         // Camera's Start() runs before Player gets moved to its start position.
         // Therefore we fetch the configured start position (regardless of the player being there or not), rather than target.position.
-        Vector2 targetCorrected = target.GetComponent<PlayerMovement>().startingPosition.value;
+        Vector2 targetCorrected = target.GetComponent<PlayerMovement>().playerSpawnStorage.position;
 
         float x = Mathf.Clamp(targetCorrected.x, camBounds.min.x, camBounds.max.x);
         float y = Mathf.Clamp(targetCorrected.y, camBounds.min.y, camBounds.max.y);

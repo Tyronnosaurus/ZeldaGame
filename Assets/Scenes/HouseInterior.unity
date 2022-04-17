@@ -6466,11 +6466,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8464727547481286707, guid: e8ab0207c3b820e40aad106388a05cb2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -3.96
       objectReference: {fileID: 0}
     - target: {fileID: 8464727547481286707, guid: e8ab0207c3b820e40aad106388a05cb2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3
+      value: -2.72
       objectReference: {fileID: 0}
     - target: {fileID: 8464727547481286707, guid: e8ab0207c3b820e40aad106388a05cb2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6671,28 +6671,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneTransition
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7443529581448062158, guid: 64dc4b6eb417b024280c08838eb30090, type: 3}
+    - target: {fileID: 7443529581448062158, guid: 64dc4b6eb417b024280c08838eb30090, type: 3}
+      propertyPath: SceneToLoad
+      value: SampleScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 7443529581448062158, guid: 64dc4b6eb417b024280c08838eb30090, type: 3}
+      propertyPath: fadeInPanel
+      value: 
+      objectReference: {fileID: 6186886418639079483, guid: df6a41ca6a8b9514da87ffbea6819369, type: 3}
+    - target: {fileID: 7443529581448062158, guid: 64dc4b6eb417b024280c08838eb30090, type: 3}
+      propertyPath: fadeOutPanel
+      value: 
+      objectReference: {fileID: 1198743930069944203, guid: 08bce3b72a1cb5a458c30961858ad481, type: 3}
+    - target: {fileID: 7443529581448062158, guid: 64dc4b6eb417b024280c08838eb30090, type: 3}
+      propertyPath: playerSpawnStorage
+      value: 
+      objectReference: {fileID: 11400000, guid: a2539eab1e1219c4b845b759003023d9, type: 2}
+    - target: {fileID: 7443529581448062158, guid: 64dc4b6eb417b024280c08838eb30090, type: 3}
+      propertyPath: playerSpawnPosition.x
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7443529581448062158, guid: 64dc4b6eb417b024280c08838eb30090, type: 3}
+      propertyPath: playerSpawnPosition.y
+      value: -6.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7443529581448062158, guid: 64dc4b6eb417b024280c08838eb30090, type: 3}
+      propertyPath: playerSpawnOrientation.y
+      value: -1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64dc4b6eb417b024280c08838eb30090, type: 3}
---- !u!1 &8884366644013578639 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7442938233681316876, guid: 64dc4b6eb417b024280c08838eb30090, type: 3}
-  m_PrefabInstance: {fileID: 8884366644013578638}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &8884366644013578640
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8884366644013578639}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87b012a33a005d145905eb6dc08c7469, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SceneToLoad: SampleScene
-  playerPosition: {x: 4.5, y: -7}
-  playerStorage: {fileID: 11400000, guid: a2539eab1e1219c4b845b759003023d9, type: 2}
-  fadeOutPanel: {fileID: 1198743930069944203, guid: 08bce3b72a1cb5a458c30961858ad481, type: 3}
-  fadeInPanel: {fileID: 6186886418639079483, guid: df6a41ca6a8b9514da87ffbea6819369, type: 3}
