@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     public Vector2Value startingPosition;
     public Inventory playerInventory;
     public SpriteRenderer receivedItemSprite;
+    public Signal ScreenKick;
 
 
     // Start is called before the first frame update
@@ -125,7 +126,8 @@ public class PlayerMovement : MonoBehaviour
     public void Knock(Vector3 attackerPosition, float thrust, float knockTime, int damage)
 	{        
         currentHealth.value -= damage;
-        playerHealthSignal.Raise();
+        playerHealthSignal.Raise(); // Signal to update the hearts in the UI
+        ScreenKick.Raise(); // Signal to start camera shake
 
         if (currentHealth.value > 0)   StartCoroutine(KnockCo(attackerPosition, thrust, knockTime));
 	}

@@ -13,6 +13,8 @@ public class CameraMovement : MonoBehaviour
     private Bounds camBounds;   // Defines bounding box where camera can move so as to not show anything outside the map
     private float camHalfHeight, camHalfWidth;
 
+    public Animator animator;
+
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +28,8 @@ public class CameraMovement : MonoBehaviour
 
         // Center camera on player immediately (before 1st frame) to prevent initial jump if player and camera had different positions in the editor
         SetOnPlayer();
+
+        animator = GetComponent<Animator>();
     }
 
 
@@ -97,5 +101,18 @@ public class CameraMovement : MonoBehaviour
 		Vector3 max = new Vector3(maxX, maxY, 0); // Upper right corner
 		camBounds.SetMinMax(min, max);
 	}
+
+
+    public void BeginCameraKick()
+    {
+        animator.SetBool("kick_active", true);
+        StartCoroutine(StopCameraKick());   // Set kick_active false for next time we need it, but do it at least one frame later
+    }
+
+    public IEnumerator StopCameraKick()
+    {
+        yield return null;  // Wait one frame
+        animator.SetBool("kick_active", false);
+    }
 
 }
