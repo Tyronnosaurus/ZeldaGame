@@ -13,26 +13,31 @@ public enum EnemyState
 
 public class Enemy : MonoBehaviour
 {
-	[Header("State Machine")]
-    public EnemyState currentState;
-
 	[Header("Stats")]
 	public IntValue maxHealth;	// Scriptable object
     public int health = 1;
     public int baseAttack;
     public float moveSpeed;
-	private Rigidbody2D myRigidBody;
 	public float chaseRadius;
-	protected Animator anim;
-	protected Transform target;
 	public float attackRadius;
 
 	[Header("Death effects")]
 	public GameObject deathEffect;
-	private float deathEffectDelay = 1f;
+	private const float deathEffectDelay = 1f;
+
+	// State Machine
+	protected EnemyState currentState;
+
+	// Target to chase
+	protected Transform target;
+
+	// Components
+	protected Animator anim;
+	private Rigidbody2D myRigidBody;
 
 
-	protected void Start()
+
+	protected virtual void Start()
 	{
 		health = maxHealth.InitialValue;
 		target = GameObject.FindWithTag("Player").transform;

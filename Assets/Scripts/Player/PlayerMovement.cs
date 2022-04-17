@@ -107,22 +107,18 @@ public class PlayerMovement : MonoBehaviour
     /// <summary> Raise obtained item over player's head  </summary>
     public void RaiseItem()
     {
-        //if (playerInventory.currentItem != null)    // If currently not have item to show
-        if (true)
+        if (currentState != PlayerState.interact)   // First signal trigger -> Start 'ReceiveItem'
         {
-            if (currentState != PlayerState.interact)   // First signal trigger -> Start 'ReceiveItem'
-            {
-                currentState = PlayerState.interact;
-                animator.SetBool("receive item", true); // Change player animation to the 'ReceiveItem' pose
-                receivedItemSprite.sprite = playerInventory.currentItem.itemSprite;
-            }
-            else // Second signal trigger -> Go back to normal gameplay
-            {
-                currentState = PlayerState.idle;
-                animator.SetBool("receive item", false); // Exit 'ReceiveItem' animation
-                receivedItemSprite.sprite = null;
-                playerInventory.currentItem = null;
-            }
+            currentState = PlayerState.interact;
+            animator.SetBool("receive item", true); // Change player animation to the 'ReceiveItem' pose
+            receivedItemSprite.sprite = playerInventory.currentItem.itemSprite;
+        }
+        else // Second signal trigger -> Go back to normal gameplay
+        {
+            currentState = PlayerState.idle;
+            animator.SetBool("receive item", false); // Exit 'ReceiveItem' animation
+            receivedItemSprite.sprite = null;
+            playerInventory.currentItem = null;
         }
     }
 

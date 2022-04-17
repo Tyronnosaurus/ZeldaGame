@@ -27,7 +27,7 @@ public class PatrolLog : Log
 	}
 
 
-	private new void Start()
+	protected override void Start()
 	{
 		base.Start();
 		

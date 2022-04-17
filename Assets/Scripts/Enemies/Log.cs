@@ -7,6 +7,4 @@ public class Log : Enemy
 
 
 
-
-
 }
